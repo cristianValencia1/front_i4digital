@@ -1,5 +1,4 @@
 import React, { FC } from 'react'
-import { Role } from '../../../apps/web/src/types/Role'
 // import CheckBox from './CheckBox'
 
 /* eslint-disable no-unused-vars, @typescript-eslint/no-explicit-any */
@@ -91,17 +90,7 @@ const Table: FC<TableProps<DataRow>> = ({ headers, data }) => {
           <tr key={`row-${row.key}`} className="border-b border-mediumGray">
             {headers.map((header) => {
               const rowValue = row[header.dataIndex]
-              if (typeof rowValue === 'object') {
-                const role = rowValue as Role
-                return (
-                  <td
-                    key={`${row.key}-${header.key}`}
-                    className="text-left text-xs text-black leading-[18px] px-4 py-2"
-                  >
-                    {role.rol}
-                  </td>
-                )
-              }
+              
               return (
                 <td
                   key={`${row.key}-${header.key}`}
